@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CB4187012869FD2200545CA3 /* AlarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4187002869FD2200545CA3 /* AlarmApp.swift */; };
-		CB4187032869FD2200545CA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4187022869FD2200545CA3 /* ContentView.swift */; };
+		CB4187032869FD2200545CA3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4187022869FD2200545CA3 /* MainView.swift */; };
 		CB4187052869FD2300545CA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4187042869FD2300545CA3 /* Assets.xcassets */; };
 		CB4187082869FD2300545CA3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4187072869FD2300545CA3 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		CB4186FD2869FD2200545CA3 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4187002869FD2200545CA3 /* AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmApp.swift; sourceTree = "<group>"; };
-		CB4187022869FD2200545CA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CB4187022869FD2200545CA3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CB4187042869FD2300545CA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB4187072869FD2300545CA3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,8 +52,8 @@
 			isa = PBXGroup;
 			children = (
 				CB4187002869FD2200545CA3 /* AlarmApp.swift */,
-				CB4187022869FD2200545CA3 /* ContentView.swift */,
-				CB4187042869FD2300545CA3 /* Assets.xcassets */,
+				CB418718286A007500545CA3 /* Global */,
+				CB418717286A006C00545CA3 /* Screens */,
 				CB4187062869FD2300545CA3 /* Preview Content */,
 			);
 			path = Alarm;
@@ -65,6 +65,46 @@
 				CB4187072869FD2300545CA3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CB418717286A006C00545CA3 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CB41871A286A013100545CA3 /* Main */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		CB418718286A007500545CA3 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				CB418719286A00AF00545CA3 /* Resource */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		CB418719286A00AF00545CA3 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CB4187042869FD2300545CA3 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		CB41871A286A013100545CA3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CB41871B286A014F00545CA3 /* Component */,
+				CB4187022869FD2200545CA3 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CB41871B286A014F00545CA3 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB4187032869FD2200545CA3 /* ContentView.swift in Sources */,
+				CB4187032869FD2200545CA3 /* MainView.swift in Sources */,
 				CB4187012869FD2200545CA3 /* AlarmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
