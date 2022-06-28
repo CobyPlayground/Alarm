@@ -36,6 +36,23 @@ struct MainView: View {
                     .listStyle(.grouped)
                 }
                 .navigationTitle("알람")
+                .navigationBarItems(
+                    leading:
+                        Button(action: {
+                            print("편집")
+                        }, label: {
+                            Text("편집")
+                                .fontWeight(.regular)
+                                .foregroundColor(.orange)
+                        })
+                    , trailing:
+                        Button(action: {
+                            print("편집")
+                        }, label: {
+                            Image(systemName: "plus")
+                                .foregroundColor(.orange)
+                        })
+                )
             }
         }
     }
