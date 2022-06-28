@@ -17,11 +17,11 @@ struct AlarmItem: View {
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
                         Text("오전")
-                            .font(.system(size: 34, weight: .regular))
+                            .font(.system(size: 34, weight: .light))
                             .foregroundColor(.gray)
                             .baselineOffset(-10)
                         Text(alarm)
-                            .font(.system(size: 58, weight: .regular))
+                            .font(.system(size: 58, weight: .light))
                             .foregroundColor(.gray)
                     }
                     Text("알람")
@@ -30,7 +30,7 @@ struct AlarmItem: View {
                 }
             })
         }
-        .listRowBackground(Color.black)
+        .listRowBackground(Color.black.opacity(0))
     }
 }
 
