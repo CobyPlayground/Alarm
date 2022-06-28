@@ -10,6 +10,7 @@ import SwiftUI
 struct AlarmItem: View {
     var alarm: String
     @State private var showActive = true
+    @State var isShowingSheet = false
     
     var body: some View {
         VStack {

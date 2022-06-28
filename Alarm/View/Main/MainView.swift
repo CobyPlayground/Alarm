@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
-    @State var alarms = ["7:30", "7:42", "6:33"]
+    @State private var alarms = ["7:30", "7:42", "6:33"]
+    @State private var showingSheet = false
     
     init() {
         UITableView.appearance().backgroundColor = .black
@@ -25,35 +26,36 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                VStack {
-                    List {
-                        ForEach(alarms, id: \.self) { alarm in
-                            AlarmItem(alarm: alarm)
-                        }
-                        .onDelete(perform: delete)
+            VStack {
+                List {
+                    ForEach(alarms, id: \.self) { alarm in
+                        AlarmItem(alarm: alarm)
                     }
-                    .listStyle(.grouped)
+                    .onDelete(perform: delete)
                 }
-                .navigationTitle("알람")
-                .navigationBarItems(
-                    leading:
-                        Button(action: {
-                            print("편집")
-                        }, label: {
-                            Text("편집")
-                                .fontWeight(.regular)
-                                .foregroundColor(.orange)
-                        })
-                    , trailing:
-                        Button(action: {
-                            print("편집")
-                        }, label: {
-                            Image(systemName: "plus")
-                                .foregroundColor(.orange)
-                        })
-                )
+                .listStyle(.grouped)
             }
+            .navigationTitle("알람")
+            .navigationBarItems(
+                leading:
+                    Button(action: {
+                        print("편집")
+                    }, label: {
+                        Text("편집")
+                            .fontWeight(.regular)
+                            .foregroundColor(.orange)
+                    })
+                ,trailing:
+                    Button(action: {
+                        showingSheet.toggle()
+                    }, label: {
+                        Image(systemName: "plus")
+                            .foregroundColor(.orange)
+                    })
+                    .sheet(isPresented: $showingSheet) {
+                        NewAlarmView()
+                    }
+            )
         }
     }
     
