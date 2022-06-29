@@ -12,7 +12,7 @@ struct MainView: View {
     @State private var showingSheet = false
     
     init() {
-        UITableView.appearance().backgroundColor = .backgroundColor
+        UITableView.appearance().backgroundColor = .backgroundColor1
         
         //Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
@@ -20,8 +20,8 @@ struct MainView: View {
         //Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        UINavigationBar.appearance().barTintColor = .backgroundColor
-        UINavigationBar.appearance().backgroundColor = .backgroundColor
+        UINavigationBar.appearance().barTintColor = .backgroundColor1
+        UINavigationBar.appearance().backgroundColor = .backgroundColor1
     }
     
     var body: some View {
@@ -43,14 +43,14 @@ struct MainView: View {
                     }, label: {
                         Text("편집")
                             .fontWeight(.regular)
-                            .foregroundColor(.secondaryColor)
+                            .foregroundColor(.fontColor1)
                     })
                 ,trailing:
                     Button(action: {
                         showingSheet.toggle()
                     }, label: {
                         Image(systemName: "plus")
-                            .foregroundColor(.secondaryColor)
+                            .foregroundColor(.fontColor1)
                     })
                     .sheet(isPresented: $showingSheet) {
                         NewAlarmView()
