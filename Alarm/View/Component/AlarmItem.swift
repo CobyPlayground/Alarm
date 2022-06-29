@@ -19,19 +19,19 @@ struct AlarmItem: View {
                     HStack {
                         Text("오전")
                             .font(.system(size: 34, weight: .light))
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color.primaryColor)
                             .baselineOffset(-10)
                         Text(alarm)
                             .font(.system(size: 58, weight: .light))
-                            .foregroundColor(.gray)
+                            .foregroundColor(.primaryColor)
                     }
                     Text("알람")
                         .font(.system(size: 15, weight: .semibold))
-                        .foregroundColor(.gray)
+                        .foregroundColor(.primaryColor)
                 }
             })
         }
-        .listRowBackground(Color.black.opacity(0))
+        .listRowBackground(Color.backgroundColor)
     }
 }
 
