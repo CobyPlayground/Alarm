@@ -14,9 +14,7 @@ struct LabelView: View {
     var body: some View {
         VStack(alignment: .center) {
             Form {
-                Section() {
-                    TextField("", text: $alarmLabel).modifier(ClearButton(text: $alarmLabel))
-                }
+                TextField("", text: $alarmLabel).modifier(ClearButton(text: $alarmLabel))
             }
         }
         .navigationTitle("레이블")

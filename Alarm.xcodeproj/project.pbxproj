@@ -89,8 +89,8 @@
 				CB4187022869FD2200545CA3 /* MainView.swift */,
 				CB0E9AB9286B1C7B00871EF4 /* NewAlarmView.swift */,
 				CB376B5C286DC356003AD659 /* RepeatIView.swift */,
-				CB376B5E286DC366003AD659 /* SoundView.swift */,
 				CB376B60286DC370003AD659 /* LabelView.swift */,
+				CB376B5E286DC366003AD659 /* SoundView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
