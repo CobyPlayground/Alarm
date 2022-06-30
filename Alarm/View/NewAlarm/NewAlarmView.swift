@@ -12,16 +12,6 @@ struct NewAlarmView: View {
     @State private var wakeUp = Date.now
     @State private var showActive = true
     
-    init() {
-        UITableView.appearance().backgroundColor = .backgroundColor2
-        
-        //Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        UINavigationBar.appearance().backgroundColor = .backgroundColor2
-        UINavigationBar.appearance().isHidden = false
-    }
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -31,7 +21,6 @@ struct NewAlarmView: View {
                             header:
                                 DatePicker("", selection: $wakeUp, displayedComponents: .hourAndMinute)
                                 .labelsHidden()
-                                .colorScheme(.dark)
                                 .datePickerStyle(WheelDatePickerStyle())
                                 .environment(\.locale, Locale.init(identifier: "en_US"))
                                 .frame(
@@ -50,7 +39,6 @@ struct NewAlarmView: View {
                                         HStack {
                                             Text("반복")
                                                 .font(.system(size: 17, weight: .regular))
-                                                .foregroundColor(.white)
                                             Spacer()
                                             Text("안 함")
                                                 .font(.system(size: 17, weight: .regular))
@@ -71,7 +59,6 @@ struct NewAlarmView: View {
                                         HStack {
                                             Text("레이블")
                                                 .font(.system(size: 17, weight: .regular))
-                                                .foregroundColor(.white)
                                             Spacer()
                                             Text("알람")
                                                 .font(.system(size: 17, weight: .regular))
@@ -92,7 +79,6 @@ struct NewAlarmView: View {
                                         HStack {
                                             Text("사운드")
                                                 .font(.system(size: 17, weight: .regular))
-                                                .foregroundColor(.white)
                                             Spacer()
                                             Text("절정")
                                                 .font(.system(size: 17, weight: .regular))
@@ -108,10 +94,8 @@ struct NewAlarmView: View {
                                     Toggle(isOn: $showActive, label: {
                                         Text("다시 알림")
                                             .font(.system(size: 17, weight: .regular))
-                                            .foregroundColor(.white)
                                     })
                                 }
-                                .listRowBackground(Color.backgroundColor3)
                     }
                 }
                 .navigationTitle("알람 추가")

@@ -11,19 +11,6 @@ struct MainView: View {
     @State private var alarms = ["7:30", "7:42", "6:33"]
     @State private var showingSheet = false
     
-    init() {
-        UITableView.appearance().backgroundColor = .backgroundColor1
-        
-        //Use this if NavigationBarTitle is with Large Font
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        //Use this if NavigationBarTitle is with displayMode = .inline
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        UINavigationBar.appearance().barTintColor = .backgroundColor1
-        UINavigationBar.appearance().backgroundColor = .backgroundColor1
-    }
-    
     var body: some View {
         NavigationView {
             VStack {

@@ -18,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		CB0E9AB9286B1C7B00871EF4 /* NewAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmView.swift; sourceTree = "<group>"; };
+		CB376B5B286DBFF6003AD659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CB4186FD2869FD2200545CA3 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4187002869FD2200545CA3 /* AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmApp.swift; sourceTree = "<group>"; };
 		CB4187022869FD2200545CA3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		CB4186FF2869FD2200545CA3 /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				CB376B5B286DBFF6003AD659 /* Info.plist */,
 				CB4187002869FD2200545CA3 /* AlarmApp.swift */,
 				CB4187042869FD2300545CA3 /* Assets.xcassets */,
 				CB5EEC0A286AC9EB00B01830 /* Extension */,
@@ -322,6 +324,7 @@
 				DEVELOPMENT_TEAM = 3Y8YH8GWMM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Alarm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -351,6 +354,7 @@
 				DEVELOPMENT_TEAM = 3Y8YH8GWMM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Alarm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
