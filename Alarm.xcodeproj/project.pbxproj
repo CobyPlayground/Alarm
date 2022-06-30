@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CB0E9ABA286B1C7B00871EF4 /* NewAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0E9AB9286B1C7B00871EF4 /* NewAlarmView.swift */; };
+		CB376B5D286DC356003AD659 /* RepeatIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB376B5C286DC356003AD659 /* RepeatIView.swift */; };
+		CB376B5F286DC366003AD659 /* SoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB376B5E286DC366003AD659 /* SoundView.swift */; };
+		CB376B61286DC370003AD659 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB376B60286DC370003AD659 /* LabelView.swift */; };
 		CB4187012869FD2200545CA3 /* AlarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4187002869FD2200545CA3 /* AlarmApp.swift */; };
 		CB4187032869FD2200545CA3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4187022869FD2200545CA3 /* MainView.swift */; };
 		CB4187052869FD2300545CA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4187042869FD2300545CA3 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		CB0E9AB9286B1C7B00871EF4 /* NewAlarmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlarmView.swift; sourceTree = "<group>"; };
 		CB376B5B286DBFF6003AD659 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CB376B5C286DC356003AD659 /* RepeatIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatIView.swift; sourceTree = "<group>"; };
+		CB376B5E286DC366003AD659 /* SoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundView.swift; sourceTree = "<group>"; };
+		CB376B60286DC370003AD659 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		CB4186FD2869FD2200545CA3 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4187002869FD2200545CA3 /* AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmApp.swift; sourceTree = "<group>"; };
 		CB4187022869FD2200545CA3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -39,14 +45,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CB0E9AB8286B1B5900871EF4 /* NewAlarm */ = {
-			isa = PBXGroup;
-			children = (
-				CB0E9AB9286B1C7B00871EF4 /* NewAlarmView.swift */,
-			);
-			path = NewAlarm;
-			sourceTree = "<group>";
-		};
 		CB4186F42869FD2200545CA3 = {
 			isa = PBXGroup;
 			children = (
@@ -87,19 +85,14 @@
 		CB418717286A006C00545CA3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CB5EEC06286ABEC200B01830 /* Main */,
-				CB0E9AB8286B1B5900871EF4 /* NewAlarm */,
 				CB5EEC07286ABEE200B01830 /* Component */,
+				CB4187022869FD2200545CA3 /* MainView.swift */,
+				CB0E9AB9286B1C7B00871EF4 /* NewAlarmView.swift */,
+				CB376B5C286DC356003AD659 /* RepeatIView.swift */,
+				CB376B5E286DC366003AD659 /* SoundView.swift */,
+				CB376B60286DC370003AD659 /* LabelView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		CB5EEC06286ABEC200B01830 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				CB4187022869FD2200545CA3 /* MainView.swift */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		CB5EEC07286ABEE200B01830 /* Component */ = {
@@ -191,8 +184,11 @@
 				CB5EEC09286ABF5800B01830 /* AlarmItem.swift in Sources */,
 				CB4187032869FD2200545CA3 /* MainView.swift in Sources */,
 				CB4187012869FD2200545CA3 /* AlarmApp.swift in Sources */,
+				CB376B5F286DC366003AD659 /* SoundView.swift in Sources */,
 				CB0E9ABA286B1C7B00871EF4 /* NewAlarmView.swift in Sources */,
+				CB376B61286DC370003AD659 /* LabelView.swift in Sources */,
 				CB5EEC0C286AC9FF00B01830 /* ColorExtension.swift in Sources */,
+				CB376B5D286DC356003AD659 /* RepeatIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
