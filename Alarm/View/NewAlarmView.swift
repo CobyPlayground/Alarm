@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct NewAlarmView: View {
-    @State private var wakeUp = Date.now
+    @State private var alarmTime = Date.now
     @State private var showActive = true
+    @State private var alarmDay = -1
+    @State private var alarmLabel = "알림"
+    @State private var alarmSound = "노래1"
     
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) private var viewContext
@@ -17,13 +20,15 @@ struct NewAlarmView: View {
     @FetchRequest(entity: Schedule.entity(), sortDescriptors: [])
     private var schedules: FetchedResults<Schedule>
     
+    private var days = ["일", "월", "화", "수", "목", "금", "토"]
+    
     var body: some View {
         NavigationView {
             VStack {
                 List {
                     Section(
                         header:
-                            DatePicker("", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                            DatePicker("", selection: $alarmTime, displayedComponents: .hourAndMinute)
                             .labelsHidden()
                             .datePickerStyle(WheelDatePickerStyle())
                             .environment(\.locale, Locale.init(identifier: "en_US"))
@@ -44,7 +49,7 @@ struct NewAlarmView: View {
                                         Text("반복")
                                             .font(.system(size: 17, weight: .regular))
                                         Spacer()
-                                        Text("안 함")
+                                        Text(alarmDay == -1 ? "안 함" : "\(days[alarmDay])요일마다")
                                             .font(.system(size: 17, weight: .regular))
                                             .foregroundColor(.fontColor3.opacity(0.6))
                                         Image(systemName: "chevron.right")
@@ -56,7 +61,7 @@ struct NewAlarmView: View {
                                 }
                                 
                                 ZStack {
-                                    NavigationLink(destination: LabelView()) {
+                                    NavigationLink(destination: LabelView(alarmLabel: $alarmLabel)) {
                                         EmptyView()
                                     }
                                     
@@ -64,7 +69,7 @@ struct NewAlarmView: View {
                                         Text("레이블")
                                             .font(.system(size: 17, weight: .regular))
                                         Spacer()
-                                        Text("알람")
+                                        Text(alarmLabel)
                                             .font(.system(size: 17, weight: .regular))
                                             .foregroundColor(.fontColor3.opacity(0.6))
                                         Image(systemName: "chevron.right")
@@ -130,10 +135,10 @@ struct NewAlarmView: View {
         do {
             let schedule = Schedule(context: viewContext)
             
-            schedule.alarmTime = wakeUp
-            schedule.alarmDay = 0
-            schedule.alarmLabel = "알람"
-            schedule.alarmSound = "노래"
+            schedule.alarmTime = alarmTime
+            schedule.alarmDay = Int16(alarmDay)
+            schedule.alarmLabel = alarmLabel
+            schedule.alarmSound = alarmSound
             schedule.alarmAgain = showActive
             
             try viewContext.save()

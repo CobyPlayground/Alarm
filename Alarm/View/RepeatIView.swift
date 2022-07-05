@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct RepeatIView: View {
-    private var days = ["일", "월", "화", "수", "목", "금", "토"]
+    //@Binding var alarmDay: Int
+    
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
+    private var days = ["일", "월", "화", "수", "목", "금", "토"]
     
     var body: some View {
         VStack {
             List {
-                ForEach(days, id: \.self) { day in
+                ForEach(days.indices) { index in
                     Button(action: {
                         self.mode.wrappedValue.dismiss()
                     }, label: {
-                        Text("\(day)요일마다")
+                        Text("\(days[index])요일마다")
                             .font(.system(size: 17, weight: .regular))
                             .foregroundColor(.white)
                     })
@@ -40,11 +43,5 @@ struct RepeatIView: View {
                     .foregroundColor(.fontColor1)
             }
         })
-    }
-}
-
-struct RepeatIView_Previews: PreviewProvider {
-    static var previews: some View {
-        RepeatIView()
     }
 }

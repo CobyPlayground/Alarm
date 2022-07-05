@@ -22,7 +22,7 @@ struct MainView: View {
                     ForEach(schedules, id: \.self) { schedule in
                         AlarmItem(alarmTime: schedule.alarmTime!, alarmLabel: schedule.alarmLabel!, alarmAgain: schedule.alarmAgain as Bool)
                     }
-                    .onDelete(perform: delete)
+                    .onDelete(perform: deleteAlarm)
                 }
                 .listStyle(.grouped)
             }
@@ -50,9 +50,16 @@ struct MainView: View {
         }
     }
     
-    func delete(at offsets: IndexSet) {
-        if let first = offsets.first {
-            //alarms.remove(at: first)
+    private func deleteAlarm(at offsets: IndexSet) {
+        offsets.forEach { index in
+            let schedule = schedules[index]
+            viewContext.delete(schedule)
+            
+            do {
+                try viewContext.save()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
 }

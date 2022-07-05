@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct LabelView: View {
+    @Binding var alarmLabel: String
+    
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @State private var alarmLabel: String = "알람"
     
     var body: some View {
         VStack(alignment: .center) {
@@ -51,11 +52,5 @@ public struct ClearButton: ViewModifier {
                 .opacity(text == "" ? 0 : 1)
                 .onTapGesture { self.text = "" } // onTapGesture or plainStyle button
         }
-    }
-}
-
-struct LabelView_Previews: PreviewProvider {
-    static var previews: some View {
-        LabelView()
     }
 }
