@@ -8,24 +8,25 @@
 import SwiftUI
 
 struct AlarmItem: View {
-    var alarm: String
-    @State private var showActive = true
+    var alarmTime: Date
+    var alarmLabel: String
+    @State var alarmAgain = true
     @State var isShowingSheet = false
     
     var body: some View {
         VStack {
-            Toggle(isOn: $showActive, label: {
+            Toggle(isOn: $alarmAgain, label: {
                 VStack(alignment: .leading, spacing: 0) {
                     HStack {
-                        Text("오전")
+                        Text(alarmTime.getFormattedDate(format: "a"))
                             .font(.system(size: 34, weight: .light))
                             .foregroundColor(.fontColor2)
                             .baselineOffset(-10)
-                        Text(alarm)
+                        Text(alarmTime.getFormattedDate(format: "h:mm"))
                             .font(.system(size: 58, weight: .light))
                             .foregroundColor(.fontColor2)
                     }
-                    Text("알람")
+                    Text(alarmLabel)
                         .font(.system(size: 15, weight: .semibold))
                         .foregroundColor(.fontColor2)
                 }
@@ -35,8 +36,10 @@ struct AlarmItem: View {
     }
 }
 
-struct AlarmItem_Previews: PreviewProvider {
-    static var previews: some View {
-        AlarmItem(alarm: "6:30")
+extension Date {
+   func getFormattedDate(format: String) -> String {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = format
+        return dateformat.string(from: self)
     }
 }

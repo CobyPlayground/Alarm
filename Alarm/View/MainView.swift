@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var alarms = ["7:30", "7:42", "6:33"]
     @State private var showingSheet = false
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(entity: Schedule.entity(), sortDescriptors: [])
+    private var schedules: FetchedResults<Schedule>
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(alarms, id: \.self) { alarm in
-                        AlarmItem(alarm: alarm)
+                    ForEach(schedules, id: \.self) { schedule in
+                        AlarmItem(alarmTime: schedule.alarmTime!, alarmLabel: schedule.alarmLabel!, alarmAgain: schedule.alarmAgain as Bool)
                     }
                     .onDelete(perform: delete)
                 }
@@ -48,7 +52,7 @@ struct MainView: View {
     
     func delete(at offsets: IndexSet) {
         if let first = offsets.first {
-            alarms.remove(at: first)
+            //alarms.remove(at: first)
         }
     }
 }

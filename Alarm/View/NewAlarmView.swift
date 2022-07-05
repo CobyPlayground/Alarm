@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct NewAlarmView: View {
-    @Environment(\.presentationMode) var presentationMode
     @State private var wakeUp = Date.now
     @State private var showActive = true
+    
+    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @FetchRequest(entity: Schedule.entity(), sortDescriptors: [])
+    private var schedules: FetchedResults<Schedule>
     
     var body: some View {
         NavigationView {
@@ -110,6 +115,7 @@ struct NewAlarmView: View {
                     })
                 ,trailing:
                     Button(action: {
+                        saveAlarm()
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Text("저장")
@@ -117,6 +123,23 @@ struct NewAlarmView: View {
                             .foregroundColor(.fontColor1)
                     })
             )
+        }
+    }
+    
+    private func saveAlarm() {
+        do {
+            let schedule = Schedule(context: viewContext)
+            
+            schedule.alarmTime = wakeUp
+            schedule.alarmDay = 0
+            schedule.alarmLabel = "알람"
+            schedule.alarmSound = "노래"
+            schedule.alarmAgain = showActive
+            
+            try viewContext.save()
+        } catch {
+            let error = error as NSError
+            fatalError("An error occured: \(error)")
         }
     }
 }

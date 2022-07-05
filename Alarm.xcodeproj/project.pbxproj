@@ -11,6 +11,9 @@
 		CB376B5D286DC356003AD659 /* RepeatIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB376B5C286DC356003AD659 /* RepeatIView.swift */; };
 		CB376B5F286DC366003AD659 /* SoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB376B5E286DC366003AD659 /* SoundView.swift */; };
 		CB376B61286DC370003AD659 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB376B60286DC370003AD659 /* LabelView.swift */; };
+		CB3DEC902874552500190C06 /* Schedule.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CB3DEC8E2874552500190C06 /* Schedule.xcdatamodeld */; };
+		CB3DEC922874558E00190C06 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3DEC912874558E00190C06 /* Alarm.swift */; };
+		CB3DEC94287455AB00190C06 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3DEC93287455AB00190C06 /* Persistence.swift */; };
 		CB4187012869FD2200545CA3 /* AlarmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4187002869FD2200545CA3 /* AlarmApp.swift */; };
 		CB4187032869FD2200545CA3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4187022869FD2200545CA3 /* MainView.swift */; };
 		CB4187052869FD2300545CA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB4187042869FD2300545CA3 /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 		CB376B5C286DC356003AD659 /* RepeatIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatIView.swift; sourceTree = "<group>"; };
 		CB376B5E286DC366003AD659 /* SoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundView.swift; sourceTree = "<group>"; };
 		CB376B60286DC370003AD659 /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		CB3DEC8F2874552500190C06 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		CB3DEC912874558E00190C06 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		CB3DEC93287455AB00190C06 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		CB4186FD2869FD2200545CA3 /* Alarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4187002869FD2200545CA3 /* AlarmApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmApp.swift; sourceTree = "<group>"; };
 		CB4187022869FD2200545CA3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -45,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB3DEC8D2874551C00190C06 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB3DEC8E2874552500190C06 /* Schedule.xcdatamodeld */,
+				CB3DEC912874558E00190C06 /* Alarm.swift */,
+				CB3DEC93287455AB00190C06 /* Persistence.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CB4186F42869FD2200545CA3 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +85,7 @@
 				CB4187042869FD2300545CA3 /* Assets.xcassets */,
 				CB5EEC0A286AC9EB00B01830 /* Extension */,
 				CB418717286A006C00545CA3 /* View */,
+				CB3DEC8D2874551C00190C06 /* Model */,
 				CB4187062869FD2300545CA3 /* Preview Content */,
 			);
 			path = Alarm;
@@ -181,12 +198,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB3DEC94287455AB00190C06 /* Persistence.swift in Sources */,
 				CB5EEC09286ABF5800B01830 /* AlarmItem.swift in Sources */,
 				CB4187032869FD2200545CA3 /* MainView.swift in Sources */,
 				CB4187012869FD2200545CA3 /* AlarmApp.swift in Sources */,
 				CB376B5F286DC366003AD659 /* SoundView.swift in Sources */,
 				CB0E9ABA286B1C7B00871EF4 /* NewAlarmView.swift in Sources */,
+				CB3DEC902874552500190C06 /* Schedule.xcdatamodeld in Sources */,
 				CB376B61286DC370003AD659 /* LabelView.swift in Sources */,
+				CB3DEC922874558E00190C06 /* Alarm.swift in Sources */,
 				CB5EEC0C286AC9FF00B01830 /* ColorExtension.swift in Sources */,
 				CB376B5D286DC356003AD659 /* RepeatIView.swift in Sources */,
 			);
@@ -391,6 +411,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CB3DEC8E2874552500190C06 /* Schedule.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CB3DEC8F2874552500190C06 /* Model.xcdatamodel */,
+			);
+			currentVersion = CB3DEC8F2874552500190C06 /* Model.xcdatamodel */;
+			path = Schedule.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CB4186F52869FD2200545CA3 /* Project object */;
 }
